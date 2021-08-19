@@ -4,25 +4,26 @@ let DataName=document.getElementById('DataName')
 let DataValue=document.getElementById('DataValue')
 let DataGet=document.getElementById('DataGet')
 let output=document.getElementById('output')
-let output2=document.getElementById('output2')
 let remove=document.getElementById('rembtn')
 let DataRemove=document.getElementById('DataRemove')
 let remall=document.getElementById('remall')
 let dark=document.getElementById('dark')
 let body=document.getElementById('body')
 let nav=document.getElementById('nav')
+let alert_show=document.getElementById('alert')
+let close=document.getElementById('close')
 nav.style.background="#f8f9fa"
 nav.style.color="#212529"
 remove.addEventListener("click",function(){
     localStorage.removeItem(DataRemove.value)
-    output2.innerText="Successfully deleted"
-    output2.style.color="green"
-    DataRemove.value=""
+    alert_show.style.visibility="visible"
 })
-setTimeout(() => {
-    output2.innerText=""
-    output2.style.color="white"
-}, 3000);
+close.addEventListener("click",function(){
+    alert_show.style.visibility="hidden"
+})
+    setTimeout(() => {
+        alert_show.style.visibility="hidden"
+        }, 6000);
 post.addEventListener("click",function(){
     //store
    localStorage.setItem(DataName.value,DataValue.value)
