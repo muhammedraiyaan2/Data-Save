@@ -11,6 +11,7 @@ let dark=document.getElementById('dark')
 let body=document.getElementById('body')
 let nav=document.getElementById('nav')
 let alert_show=document.getElementById('alert')
+// let close=document.getElementById('close')
 nav.style.background="#f8f9fa"
 nav.style.color="#212529"
 remove.addEventListener("click",function(){
@@ -18,6 +19,9 @@ remove.addEventListener("click",function(){
     DataRemove.value=""
     alert_show.style.visibility="visible"
 })
+// close.addEventListener("click",function(){
+//     alert_show.style.visibility="hidden"
+// })
     setTimeout(() => {
         alert_show.style.visibility="hidden"
         }, 6000);
