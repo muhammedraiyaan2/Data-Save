@@ -16,6 +16,7 @@ nav.style.background="#f8f9fa"
 nav.style.color="#212529"
 remove.addEventListener("click",function(){
     localStorage.removeItem(DataRemove.value)
+    DataRemove.value=""
     alert_show.style.visibility="visible"
 })
 close.addEventListener("click",function(){
