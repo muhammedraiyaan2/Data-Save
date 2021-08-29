@@ -12,6 +12,10 @@
             .home{
     margin-top: -2.5px;
 }
+.loader{
+  height: 3px;
+  background-color: chartreuse;
+}
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,6 +23,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body id="body">
+    <div class="loader" id="loader"></div>
   <nav id="nav" class="navbar navbar-expand-lg navbar-primary"> 
     <a class="navbar-brand" href="index.html">Data Save</a> 
     <button class="btn navbar-toggler navbar-toggler-icon" data-toggle="collapse" href="#collapsibleNavbar">
@@ -41,6 +46,7 @@
       </ul>
      </div>
 </nav>
+<div id="content">
 <div id="container" class="contianer-fluid text-white"><br>
     <div class="mx-5">
     <h1>About Data Save</h1>
@@ -48,6 +54,7 @@
     <h1>About Founder</h1>
     <p>Muhammad Raiyaan is the founder of the data save website, he is 11, he wants to make more projects like data save project, he is intermediate web developer.</p>
     <br>
+</div>
 </div>
 </div>
 </body>
@@ -70,5 +77,19 @@ dark.addEventListener("dblclick",function(){
     nav.style.color="white"
     con.style.background="#6c757d"
 })
+//loader
+let content=document.getElementById(`content`)
+let loader=document.getElementById('loader')
+let wid=0
+content.style.visibility="hidden"
+setInterval(() => {
+    wid++
+    loader.style.width=`${wid}%`
+    if(wid==100){
+    wid=-10*100000*10000*10000
+    loader.style.display="none"
+    content.style.visibility="visible"
+   }
+}, 10);
 </script>
 </html>
