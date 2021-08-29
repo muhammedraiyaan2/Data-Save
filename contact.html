@@ -5,6 +5,10 @@
         .home{
 margin-top: -2.5px;
 }
+.loader{
+  height: 3px;
+  background-color: chartreuse;
+}
 </style>
     <meta name="description" content="contact the data save website">
     <link rel="shortcut icon" href="https://muhammedraiyaan2.github.io/Server/datasave-icon.png" type="image/x-icon">
@@ -19,6 +23,7 @@ margin-top: -2.5px;
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body id="body">
+    <div class="loader" id="loader"></div>
   <nav id="nav" class="navbar navbar-expand-lg navbar-primary"> 
     <a class="navbar-brand" href="index.html">Data Save</a> 
     <button class="btn navbar-toggler navbar-toggler-icon" data-toggle="collapse" href="#collapsibleNavbar">
@@ -41,12 +46,14 @@ margin-top: -2.5px;
       </ul>
      </div>
 </nav>
+<div id="content">
 <div id="container">
     <br>
     <div class="mx-5 text-light">
     <h3><a class="text-white" target="_blank" href="https://github.com/muhammedraiyaan2"><b>Github</b></a>: muhammedraiyaan2</h3>
     <h3><b>Mail</b>: muhammedraiyaan2@gmail.com</h3>
     <br>
+</div>
 </div>
 </div>
 </body>
@@ -69,5 +76,19 @@ dark.addEventListener("dblclick",function(){
     nav.style.color="white"
     con.style.background="#6c757d"
 })
+//loader
+let content=document.getElementById(`content`)
+let loader=document.getElementById('loader')
+let wid=0
+content.style.visibility="hidden"
+setInterval(() => {
+    wid++
+    loader.style.width=`${wid}%`
+    if(wid==100){
+    wid=-10*100000*10000*10000
+    loader.style.display="none"
+    content.style.visibility="visible"
+   }
+}, 10);
 </script>
 </html>
